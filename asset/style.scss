@@ -1,5 +1,6 @@
 body {
   position: relative;
+  font-family: system-ui;
 
   h1 {
     margin: auto;
@@ -11,11 +12,18 @@ body {
     position: absolute;
     left: 0;
     margin-left: 25px;
-    height: 400px;
+    height: 92px;
     width: 200px;
-    bottom: -500px;
+    bottom: -273px;
     text-align: center;
     border: 1px solid black;
+    box-shadow: 6px 6px teal;
+
+    #lettersUsed {
+      font-size: 25px;
+      text-transform: capitalize;
+      margin-top: 15px;
+    }
   }
 
   .centerGameContainer {
@@ -28,10 +36,12 @@ body {
     width: 650px;
     bottom: -500px;
     text-align: center;
-    border: 1px solid black;
+
+    // border: 1px solid black;
 
     .centerGame {
-      height: 400px;
+      box-shadow: 0 0 3px rgb(105, 37, 37);
+      height: 260px;
       width: 650px;
 
       .victim,
@@ -43,6 +53,34 @@ body {
       .victim {
         display: none;
       }
+    }
+    .word {
+      width: 100%;
+      position: absolute;
+      margin: auto;
+      transform: translateY(10px);
+      padding-bottom: 22px;
+      box-shadow: 0 0 3px rgb(105, 37, 37);
+
+      .letter {
+        border-bottom: 3px solid #2980b9;
+        display: inline-flex;
+        font-size: 30px;
+        align-items: center;
+        justify-content: center;
+        margin: 0 3px;
+        height: 50px;
+        width: 20px;
+      }
+    }
+
+    #notifContainer {
+      position: absolute;
+      width: 100%;
+      transform: translateY(-40px);
+      font-size: 24px;
+      margin: auto;
+      display: none;
     }
   }
 }

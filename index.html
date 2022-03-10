@@ -11,7 +11,7 @@
     <h1>Hangman !</h1>
 
     <!-- Box des mauvaises lettres -->
-    <div class="lettersUsedContainer">WRONG LETTERS
+    <div class="lettersUsedContainer">MAUVAISES LETTRES
         <div id="lettersUsed"></div>
     </div>
 
@@ -34,10 +34,18 @@
                 <!-- Legs -->
                 <line x1="140" y1="150" x2="120" y2="180" class="victim" />
                 <line x1="140" y1="150" x2="160" y2="180" class="victim" />
-        </svg>
+            </svg>
+
+            <div class="notifContainer" id="notifContainer">
+                Vous avez déjà utilisé cette lettre !
+            </div>
+
+        <div class="word" id="word">
+
+        </div>
     </div>
 
-    <div class="word" id="word"></div>
+
 
     <script src="../asset/script.js"></script>
     
