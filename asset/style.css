@@ -1,5 +1,4 @@
 body {
-  position: relative;
   font-family: system-ui;
 }
 
@@ -7,37 +6,45 @@ body h1 {
   margin: auto;
   width: 160px;
   margin-top: 20px;
-}
-
-body .lettersUsedContainer {
-  position: absolute;
-  left: 0;
-  margin-left: 25px;
-  height: 92px;
-  width: 200px;
-  bottom: -273px;
-  text-align: center;
-  border: 1px solid black;
-  -webkit-box-shadow: 6px 6px teal;
-          box-shadow: 6px 6px teal;
-}
-
-body .lettersUsedContainer #lettersUsed {
-  font-size: 25px;
-  text-transform: capitalize;
-  margin-top: 15px;
+  text-decoration: underline;
 }
 
 body .centerGameContainer {
-  position: absolute;
-  left: 230px;
+  left: 80px;
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 80px;
   height: 400px;
   width: 650px;
   bottom: -500px;
   text-align: center;
+}
+
+body .centerGameContainer #centerGame {
+  position: relative;
+  height: 260px;
+  width: 650px;
+}
+
+body .centerGameContainer #centerGame .lettersUsedContainer {
+  position: absolute;
+  right: -60px;
+  top: -40px;
+  margin-left: 25px;
+  height: 92px;
+  width: 200px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+  -webkit-box-shadow: 6px 6px teal;
+          box-shadow: 6px 6px teal;
+}
+
+body .centerGameContainer #centerGame .lettersUsedContainer #lettersUsed {
+  font-size: 25px;
+  text-transform: capitalize;
+  margin-top: 15px;
 }
 
 body .centerGameContainer .centerGame {
@@ -58,7 +65,7 @@ body .centerGameContainer .centerGame .victim {
 }
 
 body .centerGameContainer .word {
-  width: 100%;
+  width: 650px;
   position: absolute;
   margin: auto;
   -webkit-transform: translateY(10px);
@@ -87,11 +94,62 @@ body .centerGameContainer .word .letter {
 
 body .centerGameContainer #notifContainer {
   position: absolute;
-  width: 100%;
+  width: 650px;
   -webkit-transform: translateY(-40px);
           transform: translateY(-40px);
   font-size: 24px;
   margin: auto;
   display: none;
+}
+
+body .popupContainerVictory,
+body .popupContainerDefeat {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+body .popupContainerVictory .popupVictory,
+body .popupContainerVictory .popupDefeat,
+body .popupContainerDefeat .popupVictory,
+body .popupContainerDefeat .popupDefeat {
+  border-radius: 13px;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #b9b9b9;
+  padding: 1% 3% 3% 3%;
+}
+
+body .popupContainerVictory #wordDisplay,
+body .popupContainerDefeat #wordDisplay {
+  margin: 10px 0 0 0;
+}
+
+body .popupContainerVictory button,
+body .popupContainerDefeat button {
+  margin-top: 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+  padding: 4px 6px 5px 6px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

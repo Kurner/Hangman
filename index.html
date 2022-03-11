@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="../asset/style.css">
     <title>Hangman</title>
 </head>
+
 <body>
+    
     <h1>Hangman !</h1>
-
-    <!-- Box des mauvaises lettres -->
-    <div class="lettersUsedContainer">MAUVAISES LETTRES
-        <div id="lettersUsed"></div>
-    </div>
-
+    
     <!-- Box du jeu -->
     <div class="centerGameContainer">
+        <div id="centerGame">
+            <!-- Box des mauvaises lettres -->
+            <div class="lettersUsedContainer">WRONG LETTERS
+                <div id="lettersUsed"></div>
+            </div>
+       
         <svg class="centerGame">
                 <!-- Rod -->
                 <line x1="60" y1="20" x2="140" y2="20" class="potence"/>
@@ -37,15 +40,29 @@
             </svg>
 
             <div class="notifContainer" id="notifContainer">
-                Vous avez déjà utilisé cette lettre !
+                You already used this letter !
             </div>
 
-        <div class="word" id="word">
+            <div class="word" id="word"></div>
+         </div>
+    </div>
 
+    <div class="popupContainerVictory" id="popupContainerVictory">
+        <div class="popupVictory">
+            <h2>You saved him, congratulations !</h2>
+            <img src="../asset/img/ugly_doggy.png" alt="Doggo victory !">
+            <p id="wordDisplay"></p>
+            <button id="replayV">Replay ?</button>
         </div>
     </div>
 
-
+    <div class="popupContainerDefeat" id="popupContainerDefeat">
+        <div class="popupDefeat">
+            <h2>You lost, too bad for him...</h2>
+            <img src="../asset/img/ulgy_doggo_defeat.png" alt="Doggo defeat !">
+            <button id="replayD">Replay ?</button>
+        </div>
+    </div>
 
     <script src="../asset/script.js"></script>
     

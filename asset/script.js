@@ -1,24 +1,22 @@
 const word = document.getElementById('word');
 const wrongLetters = document.getElementById('lettersUsed');
 const notif = document.getElementById('notifContainer');
+const popupVictory = document.getElementById('popupContainerVictory');
+const popupDefeat = document.getElementById('popupContainerDefeat');
+const wordDisplay = document.getElementById('wordDisplay');
 
 //On récupére les différents éléments composant la victime
 const victimParts = document.querySelectorAll('.victim');
 console.log(victimParts);
 
 //Création du tableau des mots possibles
-const wordsToFind = ['becode', 'programming', 'project', 'charleroi', 'coach', 'documentation', 'dog', 'progress', 'javascript', 'anticonstitutionnellement' ];
+const wordsToFind = ['becode', 'programming', 'project', 'charleroi', 'coach', 'documentation', 'dog', 'progress', 'javascript', 'procrastination' ];
 
 //Choix aléatoire d'un mot du tableau 'wordsToFind'
 let wordSelected = wordsToFind[Math.floor(Math.random() * wordsToFind.length)];
 
 const wrongLettersUsed = [];
 const correctLetters = [];
-
-
-//TO DO LIST :
-// Faire apparaitre les mots
-// Faire le game over et le sceen de victoire
 
 function notifBox()
 {
@@ -53,8 +51,7 @@ function victim()
     setTimeout(function() {
         if(wrongLettersUsed.length === victimParts.length)
         {
-            alert('Vous avez perdu ! Dommage pour lui...');
-            newGame();
+            popupDefeat.style.display = "flex"; 
         }
 
     });
@@ -62,7 +59,6 @@ function victim()
 
 function wordToFind()
 {
-
     word.innerHTML = `
     ${wordSelected
     .split('')
@@ -83,8 +79,8 @@ function wordToFind()
     setTimeout(function() {
         if(checkWin === wordSelected)        
         {
-            alert('Vous l\'avez sauvé ! Félicitations !');
-            newGame();
+            popupVictory.style.display = "flex"; 
+            wordDisplay.innerHTML = "The word was '" + wordSelected + "' !";
         }
     });
    
@@ -93,8 +89,6 @@ function wordToFind()
     //     const html = `<p class="word">_</p>`;
     // }
 }
-
-
 
 window.addEventListener('keydown', e =>{
     if(e.keyCode >= 65 && e.keyCode <=90){
@@ -141,6 +135,21 @@ function newGame()
 
     wordToFind();
     victim();
+    popupVictory.style.display = "none";
+    popupDefeat.style.display = "none";
 }
+
+
+document.getElementById("replayV").addEventListener("click", () => {
+
+newGame();
+
+});
+
+document.getElementById("replayD").addEventListener("click", () => {
+
+    newGame();
+    
+    });
 
 wordToFind();
