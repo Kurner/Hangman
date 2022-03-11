@@ -7,7 +7,6 @@ const wordDisplay = document.getElementById('wordDisplay');
 
 //On récupére les différents éléments composant la victime
 const victimParts = document.querySelectorAll('.victim');
-console.log(victimParts);
 
 //Création du tableau des mots possibles
 const wordsToFind = ['becode', 'programming', 'project', 'charleroi', 'coach', 'documentation', 'dog', 'progress', 'javascript', 'procrastination' ];
@@ -31,8 +30,7 @@ function notifBox()
 }
 
 function victim()
-{
-    
+{    
     wrongLetters.innerHTML = wrongLettersUsed.map(letter => letter);
 
     //Affiche les parties de la victime en fonction du nombre d'erreurs
@@ -105,7 +103,6 @@ window.addEventListener('keydown', e =>{
             else
             {
                 notifBox();
-                console.log('Déjà tapée !')
             }
         }
         else
@@ -119,7 +116,6 @@ window.addEventListener('keydown', e =>{
             else
             {
                 notifBox();
-                console.log('Déjà tapée !');
             }
         }
     }
@@ -135,6 +131,8 @@ function newGame()
 
     wordToFind();
     victim();
+
+    // Cache la fenetre popup
     popupVictory.style.display = "none";
     popupDefeat.style.display = "none";
 }
@@ -142,14 +140,14 @@ function newGame()
 
 document.getElementById("replayV").addEventListener("click", () => {
 
-newGame();
+    newGame();
 
 });
 
 document.getElementById("replayD").addEventListener("click", () => {
 
     newGame();
-    
-    });
+
+});
 
 wordToFind();
